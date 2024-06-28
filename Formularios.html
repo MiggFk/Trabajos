@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<style>
+    
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,
+     initial-scale=1.0">
+    <title>Formularios</title>
+</head>
+<body>
+    <h1>El formulario</h1>
+    <form action="#" method="POST" enctype="multipart/form-data">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+
+        <label for="telefono">Numero de documento:</label><br>
+        <input type="tel" id="telefono" name="telefono" pattern="[0-9]{10}" placeholder="Ej. 1234567890" required><br><br>
+
+        <label for="tipo_usuario">Tipo de documento:</label><br>
+        <select id="tipo_usuario" name="tipo_usuario" required>
+            <option value="">Seleccione...</option>
+            <option value="Ti">Tarjeta de identidad</option>
+            <option value="Cd">Cedula de ciudadania</option>
+            <option value="Te">Tarjeta de extranjeria</option>
+            <option value="Ce">Cédula de extranjería</option>
+            <option value="otro">Otro</option>
+        </select><br><br>
+
+        <label for="correo">Correo Electrónico:</label><br>
+        <input type="email" id="correo" name="correo5" required><br><br>
+
+        <label for="fecha_nacimiento">Fecha de Nacimiento:</label><br>
+        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required><br><br>
+
+        
+
+        <label for="mensaje">Mensaje:</label><br>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea><br><br>
+
+        <label for="archivo">Examinar:</label><br>
+        <input type="file" id="archivo" name="archivo">
+        <p id="archivoMensaje">No se ha seleccionado ningún archivo.</p><br><br>
+        <input type="reset" value="Borrar">
+        <input type="submit" value="Enviar">
+        
+    </form>
+
+    <script>
+        document.getElementById('archivo').addEventListener('change', function() {
+            var archivoInput = this;
+            var mensaje = document.getElementById('archivoMensaje');5
+            if (archivoInput.value) {
+                mensaje.textContent = archivoInput.files[0].name;
+            } else {
+                mensaje.textContent = 'No se ha seleccionado ningún archivo.';
+            }
+        });
+    </script>
+</body>
+</html>
